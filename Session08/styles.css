@@ -1,0 +1,137 @@
+/* border-box fix */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  /* remove margin and padding on body */
+  padding: 0;
+  margin: 0;
+  background-color: black;
+}
+
+/* Grouping example */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
+}
+
+.wrapper {
+  background: white;
+  /* grid layout parent */
+  display: grid;
+  /* create 12 col layout */
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* padding on immediate children of wrapper */
+.wrapper>* {
+  padding: 20px;
+}
+
+header {
+  background: rgb(1, 180, 250);
+  /* span all 12 cols*/
+  border: solid #fe0202 1px;
+  grid-column: 1 / 13;
+}
+
+main {
+  background: rgb(196, 238, 4);
+  /* span 6 cols */
+  border: solid #0446fa 1px;
+  grid-column: 4 / 10;
+}
+
+nav {
+  background: rgb(2, 190, 149);
+  /* span 3 cols */
+  border: solid #fa0473 1px;
+  grid-column: 1 / 4;
+}
+
+aside {
+  background: rgb(2, 255, 112);
+  /* span 3 cols */
+  border: solid #fa0473 1px;
+  grid-column: 10 / 13;
+}
+
+/* span 2 rows */
+main,
+nav,
+aside {
+  grid-row: 2 / 4;
+}
+
+div.col-12a {
+  background-color: #f00;
+  border: solid #0042f8 1px;
+  grid-column: 1 / 5;
+}
+
+div.col-12b {
+  background-color: rgb(245, 138, 138);
+  border: solid #02f83b 1px;
+  grid-column: 5 / 9;
+}
+
+div.col-12c {
+  background-color: #f00;
+  border: solid #0042f8 1px;
+  grid-column: 9 / 13;
+}
+
+div.col-6a {
+  background-color: rgb(0, 255, 4);
+  border: solid #d739b5 1px;
+  grid-column: 1 / 4;
+}
+
+div.col-6b {
+  background-color: rgb(255, 106, 0);
+  border: solid #dcfd02 1px;
+  grid-column: 4/ 7;
+}
+
+div.col-6r {
+  background-color: rgb(203, 173, 232);
+  border: solid #02fc2c 1px;
+  grid-column: 7 / 13;
+}
+
+div.col-6l{
+  background-color: rgb(0, 89, 255);
+  border: solid #7f0303 1px;
+  grid-column: 1/ 7;
+}
+
+div.col-3a {
+  background-color: rgb(239, 244, 83);
+  border: solid #c54c06 1px;
+  grid-column: 7 / 10;
+}
+
+div.col-3b {
+  background-color: rgb(135, 219, 216);
+  border: solid #fc0202 1px;
+  grid-column: 10 / 13;
+}
+
+footer {
+  background: darkslateblue;
+  /* span all 12 cols*/
+  border: solid #27c105 1px;
+  grid-column: 1 / 13;
+}
